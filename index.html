@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>览星工作室内网 | LXGR²</title>
+    <link rel="stylesheet" href="https://s2.ssl.qhres2.com/static/56662140ef7d5d03.css"> 
+    <link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css"> 
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #666;
+            --accent: #999;
+            --bg: #f9f9f9;
+            --white: #ffffff;
+            --spacing-unit: 8px;
+            --max-width: 1200px;
+            --font-sans: 'Helvetica Neue', Arial, sans-serif;
+            --font-serif: Georgia, 'Times New Roman', serif;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+ 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+ 
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary);
+            background-color: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+ 
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+ 
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 3);
+        }
+ 
+        header {
+            padding: calc(var(--spacing-unit) * 8) 0 calc(var(--spacing-unit) * 6);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+ 
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+ 
+        .logo {
+            font-size: 24px;
+            letter-spacing: 1px;
+            font-weight: 300;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+ 
+        .logo sup {
+            font-size: 12px;
+            margin-left: 2px;
+            position: relative;
+            top: -6px;
+        }
+ 
+        .nav {
+            display: flex;
+            list-style: none;
+        }
+ 
+        .nav-item {
+            margin-left: calc(var(--spacing-unit) * 4);
+        }
+ 
+        .nav-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            position: relative;
+        }
+ 
+        .nav-link:hover {
+            color: var(--primary);
+        }
+ 
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+ 
+        .nav-link:hover::after {
+            width: 100%;
+        }
+ 
+        .hero {
+            padding: calc(var(--spacing-unit) * 12) 0 calc(var(--spacing-unit) * 10);
+            text-align: center;
+        }
+ 
+        .hero-title {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            line-height: 1.2;
+        }
+ 
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--secondary);
+            max-width: 600px;
+            margin: 0 auto calc(var(--spacing-unit) * 6);
+            font-weight: 300;
+        }
+ 
+        .divider {
+            width: 80px;
+            height: 1px;
+            background-color: var(--accent);
+            margin: 0 auto;
+            opacity: 0.3;
+        }
+ 
+        .content-section {
+            padding: calc(var(--spacing-unit) * 10) 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+ 
+        .section-title {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            font-weight: 500;
+        }
+ 
+        .report-card {
+            background-color: var(--white);
+            width: 100%;
+            max-width: 800px;
+            padding: calc(var(--spacing-unit) * 6);
+            margin-bottom: calc(var(--spacing-unit) * 6);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+        }
+ 
+        .report-card:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06), 0 3px 6px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+ 
+        .report-title {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            line-height: 1.4;
+        }
+ 
+        .report-meta {
+            display: flex;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            color: var(--accent);
+            font-size: 13px;
+        }
+ 
+        .report-meta-item {
+            margin-right: calc(var(--spacing-unit) * 3);
+            display: flex;
+            align-items: center;
+        }
+ 
+        .report-meta-item i {
+            margin-right: calc(var(--spacing-unit) * 1);
+            font-size: 12px;
+        }
+ 
+        .report-excerpt {
+            font-family: var(--font-serif);
+            color: var(--secondary);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+ 
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            font-size: 14px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+ 
+        .read-more i {
+            margin-left: calc(var(--spacing-unit) * 1);
+            font-size: 12px;
+            transition: var(--transition);
+        }
+ 
+        .read-more:hover {
+            color: var(--accent);
+        }
+ 
+        .read-more:hover i {
+            transform: translateX(2px);
+        }
+ 
+        footer {
+            padding: calc(var(--spacing-unit) * 8) 0 calc(var(--spacing-unit) * 6);
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            text-align: center;
+            color: var(--accent);
+            font-size: 13px;
+        }
+ 
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+ 
+        .footer-link {
+            margin: 0 calc(var(--spacing-unit) * 2);
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+ 
+        .footer-link:hover {
+            color: var(--primary);
+        }
+ 
+        .copyright {
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+ 
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 16px;
+            }
+            
+            .report-card {
+                padding: calc(var(--spacing-unit) * 4);
+            }
+            
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav {
+                margin-top: calc(var(--spacing-unit) * 4);
+            }
+            
+            .nav-item {
+                margin-left: 0;
+                margin-right: calc(var(--spacing-unit) * 3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <a href="#" class="logo">LXGR<sup>2</sup></a>
+                <ul class="nav">
+                    <li class="nav-item"><a href="#" class="nav-link">研究</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">方法论</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">关于</a></li>
+                </ul>
+            </div>
+        </header>
+ 
+        <section class="hero">
+            <h1 class="hero-title">览星工作室内网</h1>
+            <p class="hero-subtitle">探索在各个圈的最顶端</p>
+            <div class="divider"></div>
+        </section>
+ 
+        <section class="content-section">
+            <h2 class="section-title">最新消息</h2>
+            
+            <div class="report-card">
+                <h3 class="report-title">工作室方针     <i class="fab fa-github social-icon"></i>顶置 </h3>
+                <div class="report-meta">
+                    <span class="report-meta-item"><i class="far fa-calendar-alt"></i> 2025年3月13日</span>
+                    <span class="report-meta-item"><i class="far fa-file-alt"></i> 1页</span>
+                    <span class="report-meta-item"><i class="fas fa-tag"></i> 室长 by. 3.13</span>
+                </div>
+                <p class="report-excerpt">览星工作室近期发展方针（2024年4月-6月）以“聚焦突破、高效执行”为核心...</p>
+                <P><A href="帖子1.html">查看报告</A></P></body>
+            </div>
+            
+            <div class="report-card">
+                <h3 class="report-title">工作室文化</h3>
+                <div class="report-meta">
+                    <span class="report-meta-item"><i class="far fa-file-alt"></i> 1页</span>
+                    <span class="report-meta-item"><i class="fas fa-tag"></i> 文化</span>
+                    <span class="report-meta-item"><i class="far fa-calendar-alt"></i>时间：2025.4.12</span>
+                </div>
+                <p class="report-excerpt">创新进取 专业专注 协作共赢 诚信正直<br>创意无限 深度钻研 团队协作 玩家至上</p>
+				<br><br>by.战略
+            </div>
+            
+            <div class="report-card">
+                <h3 class="report-title">工作室对卧底的报道</h3>
+                <div class="report-meta">
+                    <span class="report-meta-item"><i class="far fa-calendar-alt"></i> 2025年4月</span>
+                    <span class="report-meta-item"><i class="far fa-file-alt"></i> 3页</span>
+                    <span class="report-meta-item"><i class="fas fa-tag"></i> 安全报道</span>
+                </div>
+                <p class="report-excerpt">工作室关于卧底事件的内部调查报告及声明，近期，我工作室内部有干扰正常运营。为维护团队权益与项目安全，工作室立即成立肃反委员会，启动内部核查程序。现将调查过程及结果通报如下：...</p>
+                <P><A href="帖子2.html">查看报告</A></P></body>
+            </div>
+        </section>
+        <SECTION class="mb-16 animate-fadein" style="animation-delay: 0.6s">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="brand-gradient w-3 h-8 rounded mr-3"></div>
+                        <h2 class="text-2xl font-semibold">工作室年度总结</h2>
+                    </div>
+                    
+                    <div class="chart-container grid md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- 鍥捐〃1 -->
+                        <div class="chart-item bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <p class="text-sm text-gray-500">盈利</p>
+                                    <h3 class="text-2xl font-bold">￥20000</h3>
+                                </div>
+                                <div class="bg-blue-100 text-blue-600 p-2 rounded-lg">
+                                    <i class="fas fa-chart-line text-lg"></i>
+                                </div>
+                            </div>
+                            <div class="h-32 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="w-full px-4">
+                                    <div class="h-2 bg-blue-200 rounded-full">
+                                        <div class="h-2 bg-blue-500 rounded-full" ></div>
+                                    </div>
+                                    <p class="text-xs text-blue-600 mt-1">盈利增长 -4%</p>
+                                </div>
+                            </div>
+                        </div><!-- 鍥捐〃2 -->
+                        <div class="chart-item bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <p class="text-sm text-gray-500">工作室人员增长/p&gt;
+                                    <h3 class="text-2xl font-bold">-5%</h3>
+                                </div>
+                                <div class="bg-green-100 text-green-600 p-2 rounded-lg">
+                                    <i class="fas fa-coins text-lg"></i>
+                                </div>
+                            </div>
+                            <div class="h-32 bg-gradient-to-r from-green-50 to-green-100 rounded-lg flex items-center justify-center">
+                                <div class="w-24 h-24 relative">
+                                    <SVG class="w-full h-full" viewBox="0 0 36 36">
+                                        <path fill="none" stroke 
+                                                  
+                                                 
+                                          ="#E5E7EB"
+                                          
+                                          stroke-width="5"
+                                          stroke-dasharray="100, 100"
+                                        
+d="M18 2.0845 &#13;&#10;                                          a 15.9155 15.9155 0 0 1 0 31.831 &#13;&#10;                                          a 15.9155 15.9155 0 0 1 0 -31.831">
+                                        <path fill="none" stroke 
+                                                  
+                                                 
+                                          ="#10B981"
+                                          stroke-width="5"
+                                          
+                                          stroke-dasharray="34.2, 100"
+                                        
+d="M18 2.0845 &#13;&#10;                                          a 15.9155 15.9155 0 0 1 0 31.831 &#13;&#10;                                          a 15.9155 15.9155 0 0 1 0 -31.831"></SVG>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span class="text-lg font-bold text-green-600">-5%</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- 鍥捐〃3 -->
+                        <div class="chart-item bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <p class="text-sm text-gray-500">工作室完整度</p>
+                                    <h3 class="text-2xl font-bold">83.5%</h3>
+                                </div>
+                                <div class="bg-purple-100 text-purple-600 p-2 rounded-lg">
+                                    <i class="fas fa-chart-pie text-lg"></i>
+                                </div>
+                            </div>
+                            <div class="h-32 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg flex items-center justify-center">
+                                <div class="w-24 h-24 relative">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-20 h-20 rounded-full bg-purple-500 opacity-20"></div>
+                                    </div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-16 h-16 rounded-full bg-purple-500 opacity-30"></div>
+                                    </div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-12 h-12 rounded-full bg-purple-500"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+                            <div class="bg-gray-50 p-4 rounded-lg h-full">
+                                <h3 class="font-medium text-lg mb-4">贡献度</h3>&gt;
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between text-sm mb-1">
+                                            <span class="font-medium">NO.1:联合国</span>&gt;
+                                            <span class="text-green-600">300点</span>&gt;
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-green-500 h-2 rounded-full" style="WIDTH: 100%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-sm mb-1">
+                                            <span class="font-medium">NO.2:室长</span>&gt;
+                                            <span class="text-green-600">215点</span>&gt;
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-green-500 h-2 rounded-full" style="WIDTH: 100%"></div>
+                                        </div>
+                                    </div>
+<div>
+                                        <div class="flex justify-between text-sm mb-1">
+                                            <span class="font-medium">NO.3:亚历山大·罗曼诺夫</span>&gt;
+                                            <span class="text-green-600">150点</span>&gt;
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-green-500 h-2 rounded-full" style="WIDTH: 100%"></div>
+                                        </div>
+									<div>
+                                        <div class="flex justify-between text-sm mb-1">
+                                            <span class="font-medium">NO.4:剑客</span>&gt;
+                                            <span class="text-green-600">182点</span>&gt;
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-green-500 h-2 rounded-full" style="WIDTH: 100%"></div>
+                                        </div>
+									<div>
+                                        <div class="flex justify-between text-sm mb-1">
+                                            <span class="font-medium">NO.5:TCS</span>&gt;
+                                            <span class="text-green-600">92点</span>&gt;
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-green-500 h-2 rounded-full" style="WIDTH: 9%"></div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div>
+						
+        <footer>
+            <ul class="footer-links">
+                <li><a href="#" class="footer-link">隐私政策</a></li>
+                <li><a href="#" class="footer-link">使用条款</a></li>
+                <li><a href="#" class="footer-link">联系我们</a></li>
+            </ul>
+            <div class="copyright">© 2025 览星工作室 Research. Tous droits réservés.</div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RA2DIY 论坛 | 建设中</title>
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css"  rel="stylesheet">
+    <link href="https://s2.ssl.qhres2.com/static/56662140ef7d5d03.css"  rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --text: #ecf0f1;
+            --light: #bdc3c7;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--primary);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .header {
+            background-color: var(--secondary);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .nav-item {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-item:hover {
+            color: var(--accent);
+        }
+        
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-item:hover::after {
+            width: 100%;
+        }
+        
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .construction-icon {
+            font-size: 5rem;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--light);
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .progress-container {
+            width: 100%;
+            max-width: 500px;
+            height: 8px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            width: 65%;
+            background-color: var(--accent);
+            border-radius: 4px;
+            animation: progress 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes progress {
+            from { width: 65%; }
+            to { width: 70%; }
+        }
+        
+        .culture-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            max-width: 600px;
+        }
+        
+        .culture-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .culture-text {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .culture-btn {
+            background-color: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .culture-btn:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+        
+        .footer {
+            background-color: var(--secondary);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--light);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .social-icon {
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">览星工作室内网</div>
+        <div class="nav">
+            <div class="nav-item">首页</div>
+            <div class="nav-item">论坛</div>
+            <div class="nav-item">资源</div>
+            <div class="nav-item">教程</div>
+            <div class="nav-item">关于</div>
+        </div>
+    </div>
+    
+    <div class="main">
+        <div class="construction-icon">
+            <i class="fas fa-tools"></i>
+        </div>
+        <h1 class="title">网站正在升级中</h1>
+        <p class="subtitle">
+            我们正在为您打造更优质的论坛体验。在此期间，您可以关注我们的社交媒体获取最新动态。
+            预计完成时间: 2025年4月12日 12:00
+        </p>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        
+        <div class="culture-section">
+            <h2 class="culture-title">我们的工作室文化</h2>
+            <p class="culture-text">
+                创新进取 专业专注 协作共赢 诚信正直<br>创意无限 深度钻研 团队协作 玩家至上
+            </p>
+            <button class="culture-btn">了解更多</button>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="social-icons">
+            <i class="fab fa-weixin social-icon"></i>
+            <i class="fab fa-qq social-icon"></i>
+            <i class="fab fa-weibo social-icon"></i>
+            <i class="fab fa-github social-icon"></i>
+        </div>
+        <div>© 2025 lanx 社区 | 保留所有权利</div>
+    </div>
+</body>
+</html>
